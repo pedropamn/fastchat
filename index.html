@@ -76,13 +76,26 @@
 				  errorMsg.classList.add("hide");
 				  validMsg.classList.add("hide");
 				};
+				
+				//isNaN checa se não é um número
+				function thereIsLetter(str) {
+					var thereIsLetter = false;
+					  for (let i = 0; i < str.length; i++) {
+						if (isNaN(str[i])) {
+						  thereIsLetter =  true;
+						}
+					  }
+					  
+					  return thereIsLetter;
+					}
+
 
 				// on blur: validate
 				input.addEventListener('keyup', function() {
 				  reset();
 				  if (input.value.trim()) {
 				  
-					if (iti.isValidNumber()) {
+					if (iti.isValidNumber() && thereIsLetter(input.value) == false) {
 					  validMsg.classList.remove("hide");
 					  $('.send').prop('disabled', false)
 					  
