@@ -138,9 +138,18 @@
 <script>
 	$('.send').click(function(e){
 		e.preventDefault(); // previne a ação padrão do botão
-		var phoneNumber = $('#phone').val(); // número de telefone (com código de país)
+		//Get Dial Code
+		var iti = window.intlTelInputGlobals.getInstance(input);
+		var countryData = iti.getSelectedCountryData();
+		var dialCode = countryData["dialCode"];
+		
+		//Get Phone
+		var phoneNumber = $('#phone').val(); // número de telefone
+		
+		//DialCode + Phone
+		var dialCodeAndPhone = dialCode + phoneNumber;
 		var message = "Olá!"; // mensagem pré-definida
-		var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message); // URL do link
+		var url = "https://wa.me/" + dialCodeAndPhone + "?text=" + encodeURIComponent(message); // URL do link
 		window.open(url, '_blank'); // abre a nova janela com o link
 	})
 </script>
