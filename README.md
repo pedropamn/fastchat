@@ -42,7 +42,7 @@
 </div>
 
 <p align="center">
-<a align="center" href="https://pedropamn.github.io/fastchat"><img align="center" width="350" src="https://img.shields.io/badge/-pedropamn.github.io/fastchat/-blue?style=for-the-badge&logo=&logoColor=white" /></a>
+<a align="center" href="https://pedropamn.github.io/fastchat"><img align="center" width="350" src="https://img.shields.io/badge/-pedropamn.github.io/fastchat-blue?style=for-the-badge&logo=&logoColor=white" /></a>
     </p>
 
 <!-- ABOUT THE PROJECT -->
