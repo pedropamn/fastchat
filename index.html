@@ -149,9 +149,25 @@
 		//DialCode + Phone
 		var dialCodeAndPhone = dialCode + phoneNumber;
 		var message = "Olá!"; // mensagem pré-definida
-		var url = "https://api.whatsapp.com/send?phone=" + dialCodeAndPhone + "?text=" + encodeURIComponent(message); // URL do link
-alert(url);
-		window.open(url, '_blank'); // abre a nova janela com o link
+		
+
+// Função para detectar se é um dispositivo móvel
+function isMobile() {
+    return /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+var url = "";
+
+if (isMobile()) {
+    // Caso seja um dispositivo móvel, usar o intent
+    url = "intent://send/?phone=" + dialCodeAndPhone + "&text=" + encodeURIComponent(message) + "#Intent;scheme=https;package=com.whatsapp;end";
+} else {
+    // Caso seja um desktop, usar o link para WhatsApp Web
+    url = "https://web.whatsapp.com/send?phone=" + dialCodeAndPhone + "&text=" + encodeURIComponent(message);
+}
+
+//alert(url);
+window.open(url, '_blank');
 	})
 </script>
 
