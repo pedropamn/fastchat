@@ -150,6 +150,7 @@
 		var dialCodeAndPhone = dialCode + phoneNumber;
 		var message = "Olá!"; // mensagem pré-definida
 		var url = "https://api.whatsapp.com/send?phone=" + dialCodeAndPhone + "?text=" + encodeURIComponent(message); // URL do link
+alert(url);
 		window.open(url, '_blank'); // abre a nova janela com o link
 	})
 </script>
