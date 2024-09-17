@@ -159,8 +159,8 @@ function isMobile() {
 var url = "";
 
 if (isMobile()) {
-    // Caso seja um dispositivo móvel, usar o intent
-    url = "intent://send/?phone=" + dialCodeAndPhone + "&text=" + encodeURIComponent(message) + "#Intent;scheme=https;package=com.whatsapp;end";
+    // Caso seja um dispositivo móvel
+    url = "https://api.whatsapp.com/send?phone=" + dialCodeAndPhone + "&text=" + encodeURIComponent(message);
 } else {
     // Caso seja um desktop, usar o link para WhatsApp Web
     url = "https://web.whatsapp.com/send?phone=" + dialCodeAndPhone + "&text=" + encodeURIComponent(message);
